@@ -42,5 +42,6 @@ char *strcat(char *dest, const char *src);
 strcmp() - 比較字符串
 比較兩個字符串
 int strcmp(const char *str1, const char *str2);
-
-  
+3.math.h
+  round
+  math.h 的函數 round() 回傳參數的最接近 double 型態的整數值，同時會自動四捨五入，預設回傳值及參數的資料型態為 double ，另有 float 型態的 roundf() ， long double 型態的 roundl() 。
