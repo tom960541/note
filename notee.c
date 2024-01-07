@@ -45,3 +45,122 @@ int strcmp(const char *str1, const char *str2);
 3.math.h
   round
   math.h 的函數 round() 回傳參數的最接近 double 型態的整數值，同時會自動四捨五入，預設回傳值及參數的資料型態為 double ，另有 float 型態的 roundf() ， long double 型態的 roundl() 。
+  sqrt
+  可以計算函數的平方根植
+還有很多跟數學圖形以及三角函數相關的函式可以使用。
+4.ctype.h
+ctype頭檔是C語言標準函數庫中的標頭檔，這裡定義了一批C語言字元分類函數（C character classification functions），用於測試字元是否屬於特定的字元類別，如字母字元、控製字元等等 。 既支援單字節字符，也支援寬字符。
+ isascii()
+判斷字元是否為ASCII碼
+#include<ctype.h>
+#include<stdio.h>
+int main()
+{
+   char ch;
+   printf("input a character:");
+   ch=getchar();
+   if(isascii(ch))
+   {
+      printf("%c is ascii.",ch);
+   }
+   else
+   {
+      printf("%c is not ascii.",ch);
+   }
+   putchar('\n');
+   return 0;
+}
+運行結果:
+input a character:f
+f is ascii.
+isalnum()
+  功能:判斷是否為字母或數字
+  #include<ctype.h>
+#include<stdio.h>
+int main(){
+   char ch;
+   printf("input a character:");
+   scanf("%c",&ch);
+   if(isalnum(ch))
+   {
+      printf("%c is alnum.",ch);
+   }
+   else
+   {
+      printf("%c is not alnum.",ch);
+   } 
+   putchar('\n');
+   return 0;  
+}
+運行結果:
+input a character:f
+f is alnum.
+5.stdlib.h
+  atoi()
+可以處理字符串轉換整數。
+#include<stdio.h>
+ 
+#include<stdlib.h>
+ 
+int main(void){
+ 
+   int r;
+ 
+   char *s="5257";
+ 
+   r=atoi(s);
+ 
+   printf("string = %s\nint= %d\n",s,r); 
+ 
+   return 0;
+ 
+}
+運行結果:
+string = 5257
+int= 525
+abort()
+可以寫一個終止信息到stderr然後終止異常程序
+#include<stdio.h>
+ 
+#include<stdlib.h>
+ 
+int main(void) {
+ 
+   printf("Calling abort()\n");
+ 
+   abort();
+ 
+   printf("It is noneffective\n");
+ 
+   return 0;
+ 
+}
+運行結果:
+Calling abort()
+  
+malloc()
+可以分配指定大小堆內存
+#include<stdio.h>
+ 
+#include<stdlib.h>
+ 
+#include<string.h>
+ 
+int main(void){
+ 
+   char *p=(char*)malloc(20);
+ 
+   strcpy(p,"www.dotcpp.com");
+ 
+   printf("String is %s\n",p);
+ 
+   free(p);
+ 
+   return 0;
+ 
+}
+運行結果
+String is www.dotcpp.com
+swab()
+從源和目標
+
